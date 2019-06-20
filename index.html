@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel = "stylesheet" type ="text/css" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+    <title>Hospital Management System</title>
+</head>
+<body>
+        <div class = "header" >
+                <center><img src = "" alt = "adminicon" id = "image">
+                <br> Welcome to Agent panel..
+            
+                <div class="search-box">
+                        <input class ="search-text" type="text" name="" placeholder="search patients">
+                        <a class = "search-btn" href="#" >
+                            
+                        </a>
+                    
+                    </div>
+            
+                </center>
+            </div><div class = "main-content">
+                    <div class = "sidebar">
+                        <ul>
+                             
+                            <li id="patient-checkin">Patient check-in</li>
+                            <li id="all-patients"> View all patients</li>
+                            <li id="add-patient">Add new patient </li>
+                         
+                            <li> Logout</li>
+                        </ul>
+                    </div>
+                    <div class = "content">
+                      <center>  <h3> Hello Admin!</h3> </center>
+                      <!-- <h2>hii</h2> -->
+                      <div class="container">
+                           <div class="editform">
+                                <form id="edit-form">
+                                    <h1>update patients</h1>
+                                        <div>
+                                            <label >Name</label>
+                                                <input type="text" id="edit-name"> 
+                                        </div>
+                                        <br>
+                                        <div>
+                                                <label >Diagnosis</label>
+                                                <input type="text" id="edit-diagnosis">
+                                        </div>
+                                        <br>
+                                        <div>
+                                                <label >Allergies</label>
+                                                <input type="text" id="edit-allergies">
+                                        </div>
+                                        <br>
+                                        <div>
+                                                <label >Check In Time</label>
+                                                <input type="text" id="edit-check-in">
+                                        </div>
+                                        <br>
+                                        <div>
+                                                <label >Gender</label>
+                                                <input type="text" id="edit-gender"> 
+                                        </div>
+                                        <br>
+                                        <div>
+                                                <label >Phone number</label>
+                                                <input type="number" id="edit-phone">
+                                        </div>
+                                        <br>
+                                        <div>
+                                                <label >Age</label>
+                                                <input type="number" id="edit-age">
+                                        </div>
+                                        <br>
+                                        <div>
+                                                <label >Doctor</label>
+                                                <input type="text" id="edit-dic">
+                                        </div>
+                                        <br>
+                                        <div>
+                                                <input type="submit" id="dic" placeholder="submit"
+                                        </div>
+                                        <br>
+                                       
+                                    </form>
+
+                           </div>
+                    </div>  
+                    <div class="container">
+                            <div class="table-responsive">
+                                <br>
+                                <table class="table table-bordered table-striped" id="patient-table">
+                                    <tr>
+                                      
+                                            <th> Name </th>
+                                            <th> Age </th>
+                                            <th> Contact </th>
+                                            <th> Gender </th>
+                                            <th> Check-in Date </th>
+                                            <th> Allergies </th>
+                                            <th> Diagnosis</th>
+                                            <th>Doctor</th>
+                                            <th></th>
+                                            <th></th>
+                    
+                                    </tr>
+                                  
+                    
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!-- 
+
+
+   -->
+
+
+
+<script>
+    let myPatients = [];
+     $(document).ready(function(){
+                     $.ajax({
+                type: 'GET',
+                url: "http://localhost:3000/patient",
+                contentType:'application/json',
+                dataType:'json',
+                success: function (data) {
+                    myPatients = data
+                    $.each(data, function (key, value) {
+                        $('#patient-table').append(`
+                        <tr>
+	                        <td>${value.name}</td>
+	                        <td>${value.age}</td> 
+                            <td>${value.phone}</td>
+                            <td>${value.gender}</td>
+                            <td>${value.checkIn}</td>
+                            <td>${value.allergies}</td>
+                            <td>${value.diagnosis}</td>
+                            <td>${value.dr}</td>
+                            <td><button class=${value.id}>Edit</button></td>
+                            <td><button id=${value.id}>Delete</button></td>
+                        </tr>
+                        `);
+                    })
+                    deletePatient()
+                    editPatient()
+                },
+             });
+     })
+     function deletePatient(){
+         myPatients.forEach(patient =>{
+            $(`#${patient.id}`).click(() => {
+                $.ajax({
+                type: 'DELETE',
+                url: "http://localhost:3000/patient/"+`${patient.id}`,
+                contentType:'application/json',
+                dataType:'json',
+                success: function (data) {
+                    alert(`you deleted ${patient.name}`)
+                },
+             });
+            })
+         })
+        
+     }
+
+     function editPatient(){
+         myPatients.forEach(patient =>{
+            $(`.${patient.id}`).click(() => {
+                $("#edit-name").val(patient.name);
+                $("#edit-diagnosis").val(patient.diagnosis);
+                $("#edit-allergies").val(patient.allergies);
+                 $("#edit-check-in").val(patient.checkIn);
+                 $("#edit-gender").val(patient.gender);
+                 $("#edit-phone").val(patient.phone);
+                  $("#edit-age").val(patient.age);
+                  $("#edit-dic").val(patient.dr);
+                $('.editform').toggleClass('showform')
+            editMypatient(patient.id);
+            })
+         })
+        
+     }
+     function editMypatient(id){
+        $('#edit-form').submit((e) => {
+        e.preventDefault();
+       const name =  $("#edit-name").val();
+        const diagnosis =  $("#edit-diagnosis").val();
+        const allergies =   $("#edit-allergies").val();
+                const checkIn = $("#edit-check-in").val();
+               const gender =  $("#edit-gender").val();
+                const phone =  $("#edit-phone").val();
+                 const age = $("#edit-age").val();
+                 const dr =  $("#edit-dic").val();
+        let info = JSON.stringify( {
+                name: name,
+                age: age,
+                phone: phone,
+                gender: gender,
+                checkIn: checkIn,
+                allergies: allergies,
+                diagnosis: diagnosis,
+                dr: dr
+    
+            });
+                     $.ajax({
+                type: 'PUT',
+                url: "http://localhost:3000/patient/"+`${id}`,
+                contentType:'application/json',
+                dataType:'json',
+                data: info,
+                success: function (data) {
+                    alert(`Edit successfull`)
+                },
+             });
+
+     })
+
+//             $("container").hide();
+        //    $("#patient-table").hide();
+
+//    $("#patient-checkin").click(function(){
+//        $("#form-box").toggle();
+//     })
+
+// $("#all-patients").click(function(){
+//         $("#patient-table").toggle();
+
+
+
+
+     }
+    
+// //       $("#form-box").hide();
+// //    $("#patient-table").hide();
+
+//  $(document).ready(function(){
+
+//     $("#form-box").hide();
+//    $("#patient-table").hide();
+
+//    $("#patient-checkin").click(function(){
+//        $("#form-box").toggle();
+//     })
+$("#patient-table").hide();
+$("#all-patients").click(function(){
+        $("#patient-table").toggle();
+});
+
+// $('#form-box').submit(function (e) {
+//             e.preventDefault();
+//             let name = $('#name').val();
+//             let age = $('#age').val();
+//             let phone = $('#phone').val();
+//             let gender = $('#gender').val();
+//             let checkIn = $('#check-in').val();
+//             let allergies = $('#allergies').val(); 
+//             let diagnosis = $('#diagnosis').val();
+//             let doctorIncharge = $('#dic').val();
+    
+    
+//     //sets
+//             let info = JSON.stringify( {
+//                 name: name,
+//                 age: age,
+//                 phone: phone,
+//                 gender: gender,
+//                 checkIn: checkIn,
+//                 allergies: allergies,
+//                 diagnosis: diagnosis,
+//                 doctorIncharge: doctorIncharge
+    
+//             });
+//             console.log(info)
+//             $.ajax({
+//                 type: 'POST',
+//                 url: "http://localhost:3000/patient",
+//                 contentType:'application/json',
+//                 dataType:'json',
+//                 data: info,
+//                 success: function (data) {
+          
+//                 },
+//              });
+    
+           
+    
+//             // $('.search').click(function () {
+    
+//             //     console.log("edited");
+//             // });
+//         });
+//     });   
+    
+     
+//     $.getJSON("http://localhost:3000/patient", function (data) {
+//         // let patient_data = "";
+//         // $.each(data, function (key, value) {
+//         //     patient_data += '<tr>';
+//         //     patient_data += '<td>' + value.name + '</td>';
+//         //     patient_data += '<td>' + value.age + '</td>';
+//         //     patient_data += '<td>' + value.phone + '</td>';
+//         //     patient_data += '<td>' + value.gender + '</td>';
+//         //     patient_data += '<td>' + value.checkIn + '</td>';
+//         //     patient_data += '<td>' + value.allergies + '</td>';
+//         //     patient_data += '<td>' + value.diagnosis + '</td>';
+//         //     patient_data += '<td>' + value.dr + '</td>';
+    
+//         //     patient_data += '<td>"<input class ="edit_patient"  type ="checkbox" data-id ="'+value.id+'">' 
+        
+//         //     patient_data += '<td>"<input class ="delete_patient" type ="checkbox" data-id ="'+value.id+'">'
+               
+             
+                
+
+                
+            // patient_data += '</tr>';
+    //     });
+    //     $('#patient-table').append(patient_data);
+        
+    
+    // });
+    
+</script>
+
+</body>
+</html>
