@@ -31,3 +31,7 @@ $("#add-new").submit('click', function(e){
     })
     
     });
+
+    // date picker
+    $(".date").datepicker();
+  

@@ -1,6 +1,6 @@
-
-    let myPatients = [];
+let myPatients = [];
      $(document).ready(function(){
+      //  to display form with all patient info
                      $.ajax({
                 type: 'GET',
                 url: "http://localhost:3000/patient",
@@ -27,11 +27,11 @@
                     })
                     deletePatient();
                     editPatient();
-                    viewSinglePatient()
+                    viewSinglePatient();
                 },
              });
      })
-
+//displays information of a patient
      function viewSinglePatient(){
         myPatients.forEach(patient =>{
      $(`[title=${patient.id}]`).click(() =>{
@@ -82,7 +82,7 @@
          })
      }
 
-
+//deletes information based on the id of selected patients
      function deletePatient(){
          myPatients.forEach(patient =>{
             $(`#${patient.id}`).click(() => {
@@ -117,6 +117,7 @@
          })
         
      }
+
      function editMypatient(id){
         $('#edit-form').submit((e) => {
         e.preventDefault();

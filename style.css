@@ -1,13 +1,25 @@
 body{
     margin : 0px;
     border: 0px;
-}
+}@font-face {
+    src: url("./MiriamLibre-Regular.ttf");
+    font-family: MiriamLibre;
+  }
+
 .header{
     width:100%;
     height:120px;
    
     background:#2c3e50;
    
+}
+#patient-checkin a{
+    text-decoration: none;
+    color: white;
+}
+#all-patients a{
+    text-decoration: none;
+    color: white;
 }
 
 .main-content{
@@ -24,19 +36,19 @@ body{
 #form-box{
     margin: 0 auto;
     height: 42px;
-    font-family: Berlin-sans;
+    font-family: MiriamLibre;
     width: 70%;
     display: block;
     padding: 3px 6px;
     font-size: 1rem;
     color: #495057;
-    background-color: c
     border: 1px solid #8db7bb;
 }
 .sidebar{
 flex: 1;
 height: 800px;
 background-color: #2c3e50;
+font-family: MiriamLibre;
 }
 .content{
 flex: 3;
@@ -45,7 +57,7 @@ background-image: url("images/black\ nurse.jpg");
 background-color: pink;
 font-size: 20px;
 font-weight: bold;
-
+font-family: MiriamLibre;
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
@@ -53,20 +65,27 @@ position: relative;
 
 }
 ul li {
-padding: 20px;
-border-bottom: 2px solid grey;
-border-radius: 40px;
-color: white;
-background-color: black;
+    margin: 3px;
+    width: 67%;
+    border-radius: 14px;
+    padding: 22px 40px;
+    font-family: MiriamLibre;
+    background: linear-gradient(to right,#2c3e50, grey);
+    line-height: 1.4em;
+    color: white;
+    outline: none;
+    box-shadow: 0 7px 21px #d2d2d2;
+    border: none;
+    font-size: 24px;
 
 }
 ul li:hover{
-background-color :pink;
-color:black;
+
+
 padding: 20px;
 
 }
-.search-box{
+/* .search-box{
  background: #e84118;
 position:absolute;
 top: 10%; 
@@ -74,14 +93,14 @@ left: 60%;
 
 /* width: 50%; */
 /* transform: translate(-50%, -50%); */
-background: #555;
+/* background: #555;
 height: 50px;
 border-radius:40px;
-width: 20%;
-padding: 10px;
-}
+width: 20%
+padding: 10px; */ 
+
 .info{
-    color: aqua;
+    color:  #a70404;
     font-style: italic;
 }
 /* .search-box:hover > .search-text{
@@ -131,6 +150,14 @@ padding: 10px;
     box-shadow: 0 1px 4px 0 rgba(0,0,50,0.3);
     
 }
+.table td{
+        /* vertical-align: top; */
+        border-top: 1px solid #dee2e6;
+      
+        text-align: center;
+        padding: 2px;
+    }
+
 tr{
     background-color: grey;
 }
@@ -138,17 +165,123 @@ th{
     background-color: red;
 }
 .editform{
-    background: red;
-    padding: 30px;
-    display: none
+    background: transparent; 
+    display: block;
+     padding: 33px; 
+    
     
 }
 .showform{
+    width: 75%;
     display: block;
-    background: red;
-    padding: 30px;
+    background: transparent;
+    margin: 0 auto;
 }
+.add-new-box{
+    width: 69%;
+    /* border: 23px; */
+    padding: 17px;
+    margin: 0 auto;
+}
+
 input{
 width: 100%;
 border-radius: 15px;
 }
+button{
+    margin: 0 auto;
+    width: 100%;
+    border-radius: 12px;
+    padding: 2px 1px 2px 1px;
+    font-family: MiriamLibre;
+    background: linear-gradient(to right,#2c3e50, grey);
+    line-height: 1.4em;
+    color: white;
+    outline: none;
+    /* box-shadow: 0 7px 21px #d2d2d2; */
+    border: none;
+    font-size: 30px;
+    /* margin: 10px;
+    width:50%;
+    border-radius: 12px;
+    padding: 14px 40px;
+    font-family: MiriamLibre;
+    background: linear-gradient(to right,#2c3e50, grey);
+    line-height: 1.4em;
+    color: white;
+    outline: none;
+    box-shadow: 0 7px 21px #d2d2d2;
+    border: none;
+    font-size: 30px; */
+}
+/* date picker */
+
+.ui-datepicker {
+    width: 300px;
+    height: auto;
+    margin: 5px auto 0;
+    font: MiriamLibre;
+    background: white;
+   
+   
+  }
+.ui-datepicker a {
+    text-decoration: none;
+  }
+  .ui-datepicker table {
+    width: 100%;
+  }
+  .ui-datepicker-header {
+    background: grey;
+    font-weight: bold;
+    line-height: 50px;
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    border-color: #111;
+    background: white;
+  }
+  .ui-datepicker-title {
+    text-align: center;
+  }
+  
+  .ui-datepicker-prev {
+    float: left;
+    background-position: center -30px;
+    cursor: pointer;
+    
+  }
+  .ui-datepicker-next {
+    float: right;
+    background-position: center 0px;
+    cursor: pointer;
+  }
+  .ui-datepicker thead {
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #bbb;
+  }
+  .ui-datepicker th {
+    text-transform: uppercase;
+     padding: 5px 0;
+    color: black;
+    text-shadow: grey;
+    filter: dropshadow(color=#fff, offx=1, offy=0);
+  }
+  .ui-datepicker tbody td {
+    padding: 0;
+    border-right: 1px solid #bbb;
+  }
+  .ui-datepicker td span, .ui-datepicker td a {
+    display: inline-block;
+    font-weight: bold;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    color: white;
+    text-shadow: 1px 1px 0px grey;
+    filter: dropshadow(color=#fff, offx=1, offy=1);
+  }
+ 
+  .ui-datepicker-calendar .ui-state-hover {
+    background: #800000;
+  }

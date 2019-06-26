@@ -1,48 +1,15 @@
 {
   "patient": [
     {
-      "id": 2,
-      "name": "Chigo",
-      "age": "28",
-      "phone": "0905039090",
-      "gender": "female",
-      "checkIn": "12/05/2019",
-      "allergies": "lactose Intolerance",
-      "diagnosis": "cough",
-      "dr": "Dr Victor"
-    },
-    {
-      "id": 3,
-      "name": "Chigo",
-      "age": "28",
-      "phone": "0905039090",
-      "gender": "female",
-      "checkIn": "10/09/2019",
-      "allergies": "pet allergies",
-      "diagnosis": "Fever",
-      "dr": "Dr Uche"
-    },
-    {
-      "id": 4,
-      "name": "Chigo",
-      "age": "28",
-      "phone": "0905039090",
-      "gender": "female",
-      "checkIn": "11/09/2019",
-      "allergies": "dust",
-      "diagnosis": "asthma",
-      "dr": "Dr Ayo"
-    },
-    {
-      "name": "Manny",
-      "age": "23",
-      "phone": "23345566",
-      "gender": "M",
-      "checkIn": "12/05/2019",
-      "allergies": "money",
-      "diagnosis": "DDH",
-      "dr": "horhfh",
-      "id": 5
+      "name": "Patty",
+      "age": "51",
+      "phone": "08033049474",
+      "gender": "Female",
+      "checkIn": "06/26/2019",
+      "allergies": "none",
+      "diagnosis": "headache",
+      "dr": "Dr Vincent",
+      "id": 8
     }
   ]
 }

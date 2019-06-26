@@ -10,23 +10,16 @@
     src="https://code.jquery.com/jquery-3.4.1.js"
     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
+    <script
+  src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"
+  integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk="
+  crossorigin="anonymous"></script>
 </head>
 <body>
   
 <div class = "header" >
     <!-- find an image for this -->
-    <center><img src = "" alt = "adminicon" id = "image">
-    <br> Welcome to Agent panel..
-
-    <div class="search-box">
-            <input class ="search-text" type="text" name="" placeholder="">
-           <button> search <a class = "search-btn" href="#" > </button>
-                
-            </a>
-        
-        </div>
-
-    </center>
+   
 </div>
 <!-- search box -->
 
@@ -35,38 +28,41 @@
     <div class = "sidebar">
         <ul>
             <li id="patient-checkin"><a href="./check-in.html"> Patient check-in</a></li>
-            <li id="all-patients"> <a href="./index.html"> VIEW ALL PATIENT</a> </li>ete patient</li>
+            <li id="all-patients"> <a href="./index.html"> View all Patients</a> </li>
             <li> Logout</li>
         </ul>
     </div>
     <div class = "content">
       <center>  <h3> Hello Admin!</h3> </center>
 
-      <div class="container">
+      <div  class="container">
             <div class="table-resposive">
-                <form id="add-new">
+                <form id="add-new" autocomplete="off">
     
                     <h1> D-Health Patient Management System </h1>
-                    
+     <div class="add-new-box"> 
                     </br>
                     <t> Name: <input type="text" id="name"></t> <br>
                     <t> Age: <input type="text" id="age"></t><br>
                     <t> Phone Number: <input type="text" id="phone"></t> <br>
                     <t> Gender: <input type="text" id="gender"></t> <br>
-                    <t> Check in: <input type="text" id="check-in"></t> <br>
+                    <t> Check in: <input type="text" id="check-in" placeholder="select date" class="date" size="50"></t> <br>
                     <t> Allergies: <input type="text" id="allergies"></t> <br>
                     <t> Diagnosis: <input type="text" id="diagnosis"></t> <br>
                     <t> Doctor in Charge: <input type="text" id="dic"></t> <br>
-                    <button type="submit" > Add new patient </button>
+                    <button type="submit" id="add"> Add new patient </button>
                 </form>
             </div>
         </div>
 
-  
+  </div>
 
 
 
 </div>   
-<script src="./patient.js"></script> 
+<script src="./patient.js">
+
+
+</script> 
 </body>
 </html>

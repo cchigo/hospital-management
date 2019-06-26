@@ -11,22 +11,19 @@
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
+  <script
+  src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"
+  integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk="
+  crossorigin="anonymous"></script>
     <title>Hospital Management System</title>
 </head>
 <body>
         <div class = "header" >
-                
-               
-                
-                <div class="search-box">
+                <!-- <div class="search-box">
                         <input class ="search-text" type="text" name="" placeholder="search patients">
                         <button> search   <a class = "search-btn" href="#" ></a></button>
-                     
-                            
-                        
-                    
                     </div>
-            
+             -->
                
             </div>
             <div class = "main-content">
@@ -34,7 +31,7 @@
                         <ul>
                              
                             <li id="patient-checkin"><a href="./check-in.html"> Patient check-in</a></li>
-                            <li id="all-patients"> <a href="./index.html"> VIEW ALL PATIENT</a> </li>
+                            <li id="all-patients"> <a href="./index.html"> View all patients</a> </li>
                          
                             <li> Logout</li>
                         </ul>
@@ -45,10 +42,7 @@
                     
                       <div class="container">
                           <div id="view-single-patient">
-                              <!-- <div>
-                                <label >name</label>
-                                <span>CHI YOU WILL STYLE IT LATER</span>
-                              </div> -->
+                           
                           </div>
                       </div>
 
@@ -56,7 +50,7 @@
 
                       <div class="container">
                            <div class="editform">
-                                <form id="edit-form">
+                                <form id="edit-form"  autocomplete="off" >
                                     <h1>update patients</h1>
                                         <div>
                                             <label >Name</label>
@@ -75,7 +69,7 @@
                                         <br>
                                         <div>
                                                 <label >Check In Time</label>
-                                                <input type="text" id="edit-check-in">
+                                                <input type="text" id="edit-check-in"placeholder="select date" class="date" size="50">
                                         </div>
                                         <br>
                                         <div>
@@ -138,6 +132,10 @@
                 
 
 
-<script src="app.js" ></script>
+<script src="./app.js" ></script>
+<script src="./patient.js"></script>
+
+
+
 </body>
 </html>
