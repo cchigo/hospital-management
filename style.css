@@ -65,8 +65,7 @@ position: relative;
 
 }
 ul li {
-    margin: 3px;
-    width: 67%;
+    margin: 10px 3px;
     border-radius: 14px;
     padding: 22px 40px;
     font-family: MiriamLibre;
@@ -77,6 +76,7 @@ ul li {
     box-shadow: 0 7px 21px #d2d2d2;
     border: none;
     font-size: 24px;
+    list-style: none;
 
 }
 ul li:hover{
@@ -166,7 +166,7 @@ th{
 }
 .editform{
     background: transparent; 
-    display: block;
+    display: none;
      padding: 33px; 
     
     
@@ -179,7 +179,7 @@ th{
 }
 .add-new-box{
     width: 69%;
-    /* border: 23px; */
+   
     padding: 17px;
     margin: 0 auto;
 }
@@ -201,18 +201,7 @@ button{
     /* box-shadow: 0 7px 21px #d2d2d2; */
     border: none;
     font-size: 30px;
-    /* margin: 10px;
-    width:50%;
-    border-radius: 12px;
-    padding: 14px 40px;
-    font-family: MiriamLibre;
-    background: linear-gradient(to right,#2c3e50, grey);
-    line-height: 1.4em;
-    color: white;
-    outline: none;
-    box-shadow: 0 7px 21px #d2d2d2;
-    border: none;
-    font-size: 30px; */
+
 }
 /* date picker */
 
