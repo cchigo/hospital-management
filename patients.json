@@ -10,6 +10,17 @@
       "diagnosis": "headache",
       "dr": "Dr Vincent",
       "id": 8
+    },
+    {
+      "name": "",
+      "age": "unk",
+      "phone": "",
+      "gender": "",
+      "checkIn": "",
+      "allergies": "",
+      "diagnosis": "",
+      "dr": "",
+      "id": 9
     }
   ]
 }

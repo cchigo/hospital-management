@@ -1,3 +1,4 @@
+//adds new patient
 $("#add-new").submit('click', function(e){ 
     e.preventDefault();  
    let  name = $('#name').val();

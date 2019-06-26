@@ -25,6 +25,8 @@ let myPatients = [];
                         </tr>
                         `);
                     })
+
+
                     deletePatient();
                     editPatient();
                     viewSinglePatient();
@@ -124,11 +126,12 @@ let myPatients = [];
        const name =  $("#edit-name").val();
         const diagnosis =  $("#edit-diagnosis").val();
         const allergies =   $("#edit-allergies").val();
-                const checkIn = $("#edit-check-in").val();
-               const gender =  $("#edit-gender").val();
-                const phone =  $("#edit-phone").val();
-                 const age = $("#edit-age").val();
-                 const dr =  $("#edit-dic").val();
+        const checkIn = $("#edit-check-in").val();
+        const gender =  $("#edit-gender").val();
+        const phone =  $("#edit-phone").val();
+        const age = $("#edit-age").val();
+        const dr =  $("#edit-dic").val();
+        
         let info = JSON.stringify( {
                 name: name,
                 age: age,
@@ -168,76 +171,11 @@ let myPatients = [];
 
      }
     
-// //       $("#form-box").hide();
-// //    $("#patient-table").hide();
 
-//  $(document).ready(function(){
 
-//     $("#form-box").hide();
-//    $("#patient-table").hide();
 
-//    $("#patient-checkin").click(function(){
-//        $("#form-box").toggle();
-//     })
-// $("#patient-table").hide();
-// $("#all-patients").click(function(){
-//         $("#patient-table").toggle();
-// });
-
-// function addNewPatient(){
-//     $('#form-box').submit(function(e){
-//         e.preventDefault();
-      
-//                     let name = $('#name').val();
-//                     let age = $('#age').val();
-//                     let phone = $('#phone').val();
-//                     let gender = $('#gender').val();
-//                     let checkIn = $('#check-in').val();
-//                     let allergies = $('#allergies').val(); 
-//                     let diagnosis = $('#diagnosis').val();
-//                     let dr = $('#dic').val();
-//                     $('.checkInForm').toggleClass('showform')
-//              $('#patient-table').append(patient_data);
-//             let info = JSON.stringify( {
-//                 name: name,
-//                 age: age,
-//                 phone: phone,
-//                 gender: gender,
-//                 checkIn: checkIn,
-//                 allergies: allergies,
-//                 diagnosis: diagnosis,
-//                 dr: dr
-//             });
-
-//                 // console.log(info)
-//             $.ajax({
-//                 type: 'POST',
-//                 url: "http://localhost:3000/patient",
-//                 contentType:'application/json',
-//                 dataType:'json',
-//                 data: info,
-//                 success: function (data) {
-//           console.log("check in successful")
-//                 },
-//     }
-//     )
-//  })
-// }
 
  
-// 
-
-// $('#form-box').submit(function (e) {
-//             e.preventDefault();
-//             let name = $('#name').val();
-//             let age = $('#age').val();
-//             let phone = $('#phone').val();
-//             let gender = $('#gender').val();
-//             let checkIn = $('#check-in').val();
-//             let allergies = $('#allergies').val(); 
-//             let diagnosis = $('#diagnosis').val();
-//             let doctorIncharge = $('#dic').val();
-    
     
     // //sets
     //         let info = JSON.stringify( {
@@ -250,42 +188,11 @@ let myPatients = [];
     //             diagnosis: diagnosis,
     //             doctorIncharge: doctorIncharge
     
-            // });
-            // console.log(info)
-            // $.ajax({
-            //     type: 'POST',
-            //     url: "http://localhost:3000/patient",
-            //     contentType:'application/json',
-            //     dataType:'json',
-            //     data: info,
-            //     success: function (data) {
-          
-            //     },
-            //  });
-    
+  
            
-    
-//             // $('.search').click(function () {
-    
-//             //     console.log("edited");
-//             // });
-//         });
-//     });   
+ 
     
      
-    // $.getJSON("http://localhost:3000/patient", function (data) {
-    //     let patient_data = "";
-    //     $.each(data, function (key, value) {
-    //         patient_data += '<tr>';
-    //         patient_data += '<td>' + value.name + '</td>';
-    //         patient_data += '<td>' + value.age + '</td>';
-    //         patient_data += '<td>' + value.phone + '</td>';
-    //         patient_data += '<td>' + value.gender + '</td>';
-    //         patient_data += '<td>' + value.checkIn + '</td>';
-    //         patient_data += '<td>' + value.allergies + '</td>';
-    //         patient_data += '<td>' + value.diagnosis + '</td>';
-    //         patient_data += '<td>' + value.dr + '</td>';
-    
     //      patient_data += '</tr>';
         // });
         // $('#patient-table').append(patient_data);

@@ -46,7 +46,7 @@ body{
 }
 .sidebar{
 flex: 1;
-height: 800px;
+height: 1100px;
 background-color: #2c3e50;
 font-family: MiriamLibre;
 }
@@ -62,21 +62,22 @@ background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
 position: relative;
+height: 1100px;
 
 }
 ul li {
-    margin: 10px 3px;
-    border-radius: 14px;
-    padding: 22px 40px;
-    font-family: MiriamLibre;
-    background: linear-gradient(to right,#2c3e50, grey);
-    line-height: 1.4em;
-    color: white;
-    outline: none;
-    box-shadow: 0 7px 21px #d2d2d2;
-    border: none;
-    font-size: 24px;
-    list-style: none;
+  margin: 10px 3px;
+  border-radius: 14px;
+  padding: 22px 40px;
+  font-family: MiriamLibre;
+  background: linear-gradient(to right,#2c3e50, grey);
+  line-height: 1.4em;
+  color: white;
+  outline: none;
+  box-shadow: 0 7px 21px #d2d2d2;
+  border: none;
+  font-size: 24px;
+  list-style: none;
 
 }
 ul li:hover{
@@ -84,6 +85,17 @@ ul li:hover{
 
 padding: 20px;
 
+}
+.testing{
+  text-align: center;
+}
+#add-new input{
+  padding: 15px;
+  margin: 5px 0px;
+  font-size: 15px;
+}
+.addP{
+  margin-top: 8px;
 }
 /* .search-box{
  background: #e84118;
@@ -160,9 +172,10 @@ padding: 10px; */
 
 tr{
     background-color: grey;
+    color: white;
 }
 th{
-    background-color: red;
+    background-color: #2c3e50;
 }
 .editform{
     background: transparent; 
@@ -180,7 +193,7 @@ th{
 .add-new-box{
     width: 69%;
    
-    padding: 17px;
+    padding: 0px;
     margin: 0 auto;
 }
 
@@ -202,6 +215,11 @@ button{
     border: none;
     font-size: 30px;
 
+}
+.adminG{
+  font-weight: bold;
+  margin-top: 21px;
+  font-size: 2.3rem;
 }
 /* date picker */
 
