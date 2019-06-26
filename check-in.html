@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel = "stylesheet" href="style.css"><link>
     <title>Hospital Management System</title>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
 </head>
 <body>
   
@@ -30,10 +34,8 @@
 <div class = "main-content">
     <div class = "sidebar">
         <ul>
-            <li> Patient Checkin</li>
-            <li> View all patients</li>
-            <li> Update patients</li>
-            <li> Delete patient</li>
+            <li id="patient-checkin"><a href="./check-in.html"> Patient check-in</a></li>
+            <li id="all-patients"> <a href="./index.html"> VIEW ALL PATIENT</a> </li>ete patient</li>
             <li> Logout</li>
         </ul>
     </div>
@@ -42,10 +44,10 @@
 
       <div class="container">
             <div class="table-resposive">
-                <form id="form-box">
+                <form id="add-new">
     
-                    <h1> Deca-Health Patient Management System </h1>
-                    <button type="submit" > Add new patient </button>
+                    <h1> D-Health Patient Management System </h1>
+                    
                     </br>
                     <t> Name: <input type="text" id="name"></t> <br>
                     <t> Age: <input type="text" id="age"></t><br>
@@ -55,6 +57,7 @@
                     <t> Allergies: <input type="text" id="allergies"></t> <br>
                     <t> Diagnosis: <input type="text" id="diagnosis"></t> <br>
                     <t> Doctor in Charge: <input type="text" id="dic"></t> <br>
+                    <button type="submit" > Add new patient </button>
                 </form>
             </div>
         </div>
@@ -63,6 +66,7 @@
 
 
 
-</div>    
+</div>   
+<script src="./patient.js"></script> 
 </body>
 </html>

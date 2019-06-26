@@ -1,17 +1,6 @@
 {
   "patient": [
     {
-      "name": "chigom",
-      "age": "28",
-      "phone": "0905039090",
-      "gender": "female",
-      "checkIn": "12/09/2019",
-      "allergies": "nuts",
-      "diagnosis": "malaria",
-      "dr": "Dr ok?",
-      "id": 1
-    },
-    {
       "id": 2,
       "name": "Chigo",
       "age": "28",
@@ -43,6 +32,17 @@
       "allergies": "dust",
       "diagnosis": "asthma",
       "dr": "Dr Ayo"
+    },
+    {
+      "name": "Manny",
+      "age": "23",
+      "phone": "23345566",
+      "gender": "M",
+      "checkIn": "12/05/2019",
+      "allergies": "money",
+      "diagnosis": "DDH",
+      "dr": "horhfh",
+      "id": 5
     }
   ]
 }

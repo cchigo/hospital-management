@@ -80,6 +80,10 @@ border-radius:40px;
 width: 20%;
 padding: 10px;
 }
+.info{
+    color: aqua;
+    font-style: italic;
+}
 /* .search-box:hover > .search-text{
     width:240px;
     padding: 0 6px;
